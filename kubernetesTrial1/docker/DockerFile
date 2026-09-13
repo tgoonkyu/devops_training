@@ -1,0 +1,6 @@
+FROM tomcat
+LABEL maintainer = "tony@trivium.com"
+RUN mv webapps.dist/* webapps
+ADD ./target/kubernetesTrial1-1.war weapps
+EXPOSE 8080
+CMD ["cataline.sh", "run"]
