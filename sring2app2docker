@@ -1,0 +1,6 @@
+FROM tomcat
+LABEL maintainer = "tony@trivium.com"
+RUN mv webapps.dist/* webapps
+ADD ./springwebapp2/target/springDemo2-0.0.1-SNAPSHOT.war webapps/
+EXPOSE 8082
+CMD ["Catalina.sh", "run"]

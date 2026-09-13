@@ -1,0 +1,6 @@
+FROM tomcat
+LABEL maintainer = "tony@trivium.com"
+RUN mv webapps.dist/* webapps
+ADD ./Demo1/target/Demo1-0.0.1.war webapps/
+EXPOSE 8080
+CMD ["catalina.sh","run"]
